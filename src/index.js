@@ -16,7 +16,7 @@ program
   .description('Get names for items')
   .action((names, args) => {
     names.forEach(name => {
-      console.log(db.get(name));
+      console.log(db.get(name).table);
     });
   });
 
@@ -24,7 +24,14 @@ program
   .command('show <version>')
   .description('List names in version')
   .action((version, args) => {
-    db.getAll(version).forEach(console.log);
+    db.getAll(Number.parseInt(version, 10)).forEach(el => console.log(el));
+  });
+
+program
+  .command('bump <name...>')
+  .description('Update version on some tables')
+  .action((names, args) => {
+    db.bump(...names);
   });
 
 program.parse(process.argv);

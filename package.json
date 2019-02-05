@@ -4,16 +4,20 @@
   "description": "",
   "main": "index.js",
   "bin": {
-    "dvc": "./index.js"
+    "dvc": "./src/index.js"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
+  },
+  "jest": {
+    "setupFilesAfterEnv": ["jest-chain"]
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "commander": "^2.19.0",
+    "lodash": "^4.17.11",
     "lowdb": "^1.0.0"
   },
   "devDependencies": {
@@ -21,7 +25,11 @@
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-config-prettier": "^4.0.0",
     "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-jest": "^22.2.2",
     "eslint-plugin-prettier": "^3.0.1",
+    "jest": "^24.1.0",
+    "jest-chain": "^1.1.2",
+    "jest-environment-node": "^24.0.0",
     "prettier": "^1.16.4"
   }
 }
