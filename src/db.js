@@ -11,7 +11,7 @@ const { makeTableName } = require('./name');
 
 // Set defaults (required if JSON file is empty)
 db.defaults({
-  version: '1',
+  dvc_version: '1',
   current: 1,
   versions: [1],
   records: [],

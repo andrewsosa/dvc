@@ -7,10 +7,12 @@
     "dvc": "./src/index.js"
   },
   "scripts": {
-    "test": "jest"
+    "test": "DB_PATH=dvc.test.db jest"
   },
   "jest": {
-    "setupFilesAfterEnv": ["jest-chain"]
+    "setupFilesAfterEnv": [
+      "jest-chain"
+    ]
   },
   "keywords": [],
   "author": "",
