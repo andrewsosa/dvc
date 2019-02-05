@@ -1,10 +1,6 @@
 # DVC spec
 
 ```sh
-
-# create first version
-$ dvc init
-
 # get table name
 $ dvc get task1 task2
 task1.version1.table
