@@ -53,6 +53,7 @@ const Controller = {
       .write();
     // Add new records for all names
     db.get('records')
+      .filter({ version: version - 1 })
       .value()
       .forEach(({ name, table }) => {
         console.log(name);
