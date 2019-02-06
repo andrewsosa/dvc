@@ -30,9 +30,10 @@ const Controller = {
     return Controller.get(name);
   },
   get: name => {
+    const version = db.get('current').value();
     const result = db
       .get('records')
-      .find({ name })
+      .find({ name, version })
       .value();
     return result || Controller.new(name);
   },
