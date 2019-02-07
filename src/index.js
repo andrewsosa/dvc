@@ -1,37 +1,30 @@
 #!/usr/bin/env node
-/* eslint-disable no-unused-vars */
 
 const program = require('commander');
-const db = require('./db');
+const commands = require('./commands');
+const datastore = require('./db');
+const setup = require('./setup');
+
+const { actions } = setup(commands, datastore);
 
 program
   .command('init')
   .description('Initialize DVC')
-  .action(args => {
-    console.log('hello, world!');
-  });
+  .action(actions.init);
 
 program
   .command('get <name...>')
   .description('Get names for items')
-  .action((names, args) => {
-    names.forEach(name => {
-      console.log(db.get(name).table);
-    });
-  });
+  .action(actions.get);
 
 program
   .command('show <version>')
   .description('List names in version')
-  .action((version, args) => {
-    db.getAll(Number.parseInt(version, 10)).forEach(el => console.log(el));
-  });
+  .action(actions.show);
 
 program
   .command('bump <name...>')
   .description('Update version on some tables')
-  .action((names, args) => {
-    db.bump(...names);
-  });
+  .action(actions.bump);
 
 program.parse(process.argv);
