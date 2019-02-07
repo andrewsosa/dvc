@@ -1,7 +1,7 @@
 {
   "name": "dvc",
   "version": "1.0.0",
-  "description": "",
+  "description": "prototype data version control cli",
   "main": "index.js",
   "bin": {
     "dvc": "./src/cli.js"
@@ -15,8 +15,9 @@
     ]
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Andrew Sosa <andrew@andrewsosa.com",
+  "repository": "https://github.com/andrewsosa/dvc.js",
+  "license": "MIT",
   "dependencies": {
     "commander": "^2.19.0",
     "find-up": "^3.0.0",
