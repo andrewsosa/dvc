@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "bin": {
-    "dvc": "./src/index.js"
+    "dvc": "./src/cli.js"
   },
   "scripts": {
     "test": "DB_PATH=dvc.test.db jest"
